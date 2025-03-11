@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:socialnetworkflutter/components/my_settings_tile.dart';
 import 'package:socialnetworkflutter/themes/theme_provider.dart';
 
 // settings page
@@ -23,17 +24,16 @@ class SettingsPage extends StatelessWidget {
       body: Column(
         children: [
           //lightmode
-          ListTile(
-            title: Text("Light Mode"),
-            trailing: CupertinoSwitch(
+          MySettingsTile(
+            title: "Light Mode",
+            action: CupertinoSwitch(
               onChanged:
                   (value) =>
                       Provider.of<ThemeProvider>(
                         context,
                         listen: false,
                       ).toggleTheme(),
-              value:
-                  Provider.of<ThemeProvider>(context, listen: true).isLightMode,
+              value: Provider.of<ThemeProvider>(context).isLightMode,
             ),
           ),
         ],
