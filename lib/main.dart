@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:socialnetworkflutter/pages/login_page.dart';
 import 'package:socialnetworkflutter/themes/theme_provider.dart';
-import 'pages/home_page.dart';
 
 void main() {
   runApp(
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: LoginPage(),
       theme:
           Provider.of<ThemeProvider>(
             context,
