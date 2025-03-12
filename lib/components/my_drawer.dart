@@ -13,51 +13,52 @@ class MyDrawer extends StatelessWidget {
     return Drawer(
       backgroundColor: Theme.of(context).colorScheme.surface,
       child: SafeArea(
-        child: Column(
-          children: [
-            //app logo
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 50.0),
-              child: Icon(
-                Icons.person,
-                size: 72,
-                color: Theme.of(context).colorScheme.primary,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 25.0),
+          child: Column(
+            children: [
+              //app logo
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 50.0),
+                child: Icon(
+                  Icons.person,
+                  size: 72,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
               ),
-            ),
 
-            //dividerline
-            Divider(
-              indent: 25,
-              endIndent: 25,
-              color: Theme.of(context).colorScheme.primary,
-            ),
+              //dividerline
+              Divider(color: Theme.of(context).colorScheme.primary),
 
-            //home
-            MyDrawerTile(
-              title: "H O M E",
-              icon: Icons.home,
-              onTap: () {
-                //menu drawer since we are already in the home page
-                Navigator.pop(context);
-              },
-            ),
+              const SizedBox(height: 10),
 
-            //settings
-            MyDrawerTile(
-              title: "S E T T I N G S",
-              icon: Icons.settings,
-              onTap: () {
-                //pop drawer menu
-                Navigator.pop(context);
+              //home
+              MyDrawerTile(
+                title: "H O M E",
+                icon: Icons.home,
+                onTap: () {
+                  //menu drawer since we are already in the home page
+                  Navigator.pop(context);
+                },
+              ),
 
-                //navigate to settings page
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => SettingsPage()),
-                );
-              },
-            ),
-          ],
+              //settings
+              MyDrawerTile(
+                title: "S E T T I N G S",
+                icon: Icons.settings,
+                onTap: () {
+                  //pop drawer menu
+                  Navigator.pop(context);
+
+                  //navigate to settings page
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SettingsPage()),
+                  );
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
